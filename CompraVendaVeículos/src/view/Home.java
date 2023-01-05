@@ -7,7 +7,6 @@ import javax.swing.*;
 public class Home {
 	
 	private JFrame janela = new JFrame("Home Page");
-	private JLabel container = new JLabel();
 	private JLabel logIn = new JLabel("Faça seu LogIn");
 	private JLabel usuario = new JLabel("Usuário:");
 	private JTextField usuarioBox = new JTextField();
@@ -38,7 +37,6 @@ public class Home {
 		janela.add(opcao);
 		janela.add(cadastro);
 		
-		janela.setVisible(true);
 		janela.setLocationRelativeTo(null);
 		
 		//eventos
@@ -52,10 +50,13 @@ public class Home {
 				janela.dispose();
 			}
 		});
+		
+		//ultima linha do construtor
+		janela.setVisible(true);
 	}
 	
-	public static void main (String[] args) {
-		Home teste = new Home();
+	public static void main (String... args) {
+		Home testando = new Home();
 	}
 	
 }
