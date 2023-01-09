@@ -4,9 +4,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class Home {
+import banco.Banco;
+
+public class Login {
 	
-	private JFrame janela = new JFrame("Home Page");
+	private JFrame janela = new JFrame("Login");
 	private JLabel logIn = new JLabel("Faça seu LogIn");
 	private JLabel usuario = new JLabel("Usuário:");
 	private JTextField usuarioBox = new JTextField();
@@ -16,7 +18,7 @@ public class Home {
 	private JLabel opcao = new JLabel("Ainda não tem uma conta?");
 	private JButton cadastro = new JButton("Cadastrar");
 	
-	public Home () {
+	public Login () {
 		janela.setSize(1250, 750);
 		logIn.setBounds(565, 70, 115, 70);
 		usuario.setBounds(475, 150, 100, 40);
@@ -37,6 +39,7 @@ public class Home {
 		janela.add(opcao);
 		janela.add(cadastro);
 		
+		janela.setResizable(false);
 		janela.setLocationRelativeTo(null);
 		
 		//eventos
@@ -56,7 +59,8 @@ public class Home {
 	}
 	
 	public static void main (String... args) {
-		Home testando = new Home();
+		Login testando = new Login();
+		
 	}
 	
 }

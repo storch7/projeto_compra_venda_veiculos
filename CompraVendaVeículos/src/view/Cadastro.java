@@ -3,6 +3,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+import banco.Banco;
+import main.Usuario;
+
 public class Cadastro {
 	
 	private JFrame cadastro = new JFrame();
@@ -18,8 +21,6 @@ public class Cadastro {
 	private JTextField telefoneBox = new JTextField();
 	private JLabel senha = new JLabel("Senha:");
 	private JTextField senhaBox = new JTextField();
-	private JLabel confirmSenha = new JLabel("Confirmar senha:");
-	private JTextField confirmSenhaBox = new JTextField();
 	private JButton cadastrar = new JButton("Cadastrar");
 	
 	
@@ -38,8 +39,6 @@ public class Cadastro {
 		telefoneBox.setBounds(425, 370, 350, 40);
 		senha.setBounds(425, 420, 100, 40);
 		senhaBox.setBounds(425, 460,350, 40);
-		confirmSenha.setBounds(425, 510, 250, 40);
-		confirmSenhaBox.setBounds(425, 550,350, 40);
 		cadastrar.setBounds(1115, 650, 100, 40);
 		cadastro.setLayout(null);
 				
@@ -55,27 +54,72 @@ public class Cadastro {
 		cadastro.add(telefoneBox);
 		cadastro.add(senha);
 		cadastro.add(senhaBox);
-		cadastro.add(confirmSenha);
-		cadastro.add(confirmSenhaBox);
 		cadastro.add(cadastrar);
 		
+		cadastro.setResizable(false);
 		cadastro.setLocationRelativeTo(null);
 		
-		//eventos
+		//EVENTOS
 		
-		//voltar para a tela inicial
+		//Voltar para a tela inicial
 		volta.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Home();
+				new Login();
 				cadastro.dispose();
 			}
 		});
 		
-		//ultima linha do construtor
-		cadastro.setVisible(true);
+		//Cadastrando um usuário
+		cadastrar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
 				
-	}
+				//Notificando em caso de informações em conflito
+				String nomeUsuario = nomeBox.getText();
+				String cpfUsuario = documentoBox.getText();
+				String contatoUsuario = telefoneBox.getText();
+				String senhaUsuario = senhaBox.getText();
+								
+				if (nomeUsuario.isEmpty() == true) {
+					JOptionPane.showMessageDialog(null, "Insira o nome do Usuário");
+				}
+				
+				if (cpfUsuario.isEmpty() == true) {
+					JOptionPane.showMessageDialog(null, "Insira o CPF do usuário");
+				}
+				
+				if (contatoUsuario.isEmpty() == true) {
+					JOptionPane.showMessageDialog(null, "Insita o contato do Usuário");
+				}
+				
+				if (senhaUsuario.isEmpty() == true) {
+					JOptionPane.showMessageDialog(null, "Insita uma senha para o Usuário");
+				}
+						
+				if (nomeUsuario.isEmpty() == false & cpfUsuario.isEmpty() == false & contatoUsuario.isEmpty() == false & senhaUsuario.isEmpty() == false)	 {
+					
+					Usuario novoCadastro = new Usuario();
+					
+					novoCadastro.setNome(nomeUsuario);
+					novoCadastro.setCpf(cpfUsuario);
+					novoCadastro.setContato(contatoUsuario);
+					novoCadastro.setEndereco(enderecoBox.getText());
+					novoCadastro.setSenha(senhaUsuario);
+					
+					Banco.getUsuario().add(novoCadastro);
+					JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!");
+					
+					new Login();
+					cadastro.dispose();
+				}			
+		};
+		
+	});
 	
+		//ultima linha do construtor
+	cadastro.setVisible(true);
+	}
 }
