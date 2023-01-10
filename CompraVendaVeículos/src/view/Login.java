@@ -54,6 +54,36 @@ public class Login {
 			}
 		});
 		
+		//Login do Usuário
+		entrar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+								
+				if(Banco.getUsuario().size() == 0) {
+					JOptionPane.showMessageDialog(null, "Ainda não há usuários cadastrados");
+				}
+				
+				else {
+					
+					if(usuarioBox.getText().isEmpty() == true || senhaBox.getText().isEmpty() == true) {
+						JOptionPane.showMessageDialog(null, "Insira as informações dos campos");
+					}
+					
+					else {
+						
+						for(int i = 0; i < Banco.getUsuario().size(); i++) {
+							
+							if (Banco.getUsuario().get(i).getCpf().equals(usuarioBox.getText()) & Banco.getUsuario().get(i).getSenha().equals(senhaBox.getText())) {
+								System.out.println("Login realizado com sucesso!");
+							}
+							
+						}
+					}
+				}
+			}
+		});
+		
 		//ultima linha do construtor
 		janela.setVisible(true);
 	}
