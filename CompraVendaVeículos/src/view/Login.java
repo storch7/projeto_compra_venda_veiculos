@@ -1,9 +1,7 @@
 package view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
-
 import banco.Banco;
 
 public class Login {
@@ -75,7 +73,10 @@ public class Login {
 						for(int i = 0; i < Banco.getUsuario().size(); i++) {
 							
 							if (Banco.getUsuario().get(i).getCpf().equals(usuarioBox.getText()) & Banco.getUsuario().get(i).getSenha().equals(senhaBox.getText())) {
-								System.out.println("Login realizado com sucesso!");
+								
+								new App(Banco.getUsuario().get(i));
+								janela.dispose();
+																
 							}
 							
 						}
