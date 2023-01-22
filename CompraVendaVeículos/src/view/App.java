@@ -1,5 +1,8 @@
 package view;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 import main.Usuario;
 
@@ -14,11 +17,11 @@ public class App {
 	private JLabel nomeBanco;
 	private JLabel contatoUser = new JLabel("Contato:");
 	private JLabel contatoBanco;
-	private JButton cadastrarCarro = new JButton("Cadastrar Carro");
-	private JButton cadastrarCaminhao = new JButton("Cadastrar Caminhão");
+	private JButton cadastrarCaminhao = new JButton("Cadastrar Veículos");
 	private JButton veiculosCadastrados = new JButton("Veículos Cadastrados");
 	private JButton minhasVendas = new JButton("Minhas Vendas");
 	private JButton minhasCompras = new JButton("Minhas Compras");
+	private JButton sair = new JButton("Sair");
 	
 	
 	//Elementos da lista de veículos
@@ -31,6 +34,7 @@ public class App {
 	
 	public App (Usuario usuario) {
 		
+		//DESIGN DA TELA
 		tela.setSize(1250, 750);
 		//itens do perfil
 		perfilUsuario.setBounds(0, 0, 300, 750);
@@ -42,11 +46,11 @@ public class App {
 		contatoUser.setBounds(25, 100, 100, 45);
 		contatoBanco = new JLabel(usuario.getContato());
 		contatoBanco.setBounds(85, 100, 100, 45);
-		cadastrarCarro.setBounds(75, 150, 145, 45);
 		cadastrarCaminhao.setBounds(70, 200, 155, 45);
 		veiculosCadastrados.setBounds(65, 250, 165, 45);
 		minhasVendas.setBounds(75, 300, 145, 45);
 		minhasCompras.setBounds(75, 350, 145, 45);
+		sair.setBounds(25, 650, 100,45);
 		
 		//veículos
 		produtos.setBounds(300, 0, 450, 750);
@@ -63,11 +67,11 @@ public class App {
 		perfilUsuario.add(nomeBanco);
 		perfilUsuario.add(contatoUser);
 		perfilUsuario.add(contatoBanco);
-		perfilUsuario.add(cadastrarCarro);
 		perfilUsuario.add(cadastrarCaminhao);
 		perfilUsuario.add(veiculosCadastrados);
 		perfilUsuario.add(minhasVendas);
 		perfilUsuario.add(minhasCompras);
+		perfilUsuario.add(sair);
 		
 		perfilUsuario.setLayout(null);
 		tela.add(perfilUsuario);
@@ -84,6 +88,16 @@ public class App {
 		tela.setLocationRelativeTo(null);
 		tela.setVisible(true);
 		
+		//EVENTOS
+		sair.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Login();
+				tela.dispose();
+				
+			}
+		});
 	}
 	
 }

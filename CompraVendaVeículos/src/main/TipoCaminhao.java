@@ -9,5 +9,6 @@ public enum TipoCaminhao {
 	ConjuntoCarretaDoisEixos,
 	ConjuntoCarretaTresEixos,
 	Bitrem,
-	Rodotrem
+	Rodotrem,
+	Outro
 }

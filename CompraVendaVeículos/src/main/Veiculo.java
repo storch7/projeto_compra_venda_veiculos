@@ -73,6 +73,10 @@ public abstract class Veiculo {
 	}
 	
 	//metodos especificos da classe 
+	public void manifestarInteresse() {
+		
+	}
+	
 	public void aplicarDesconto() {
 		//sobrescrever na classe filha
 	}

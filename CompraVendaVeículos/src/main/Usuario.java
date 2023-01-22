@@ -11,13 +11,15 @@ public class Usuario {
 	private String nome;
 	private String endereco;
 	private String contato;
-	private List<Carro> listaCarro;
-	private List<Caminhao> listaCaminhao;
-	
+	private List<Veiculo> listaVeiculosAnunciados;
+	private List<Veiculo> listaVeiculosVendidos;
+	private List<Veiculo> listaVeiculosComprados;
+		
 	//metodos
 	public Usuario() {
-		listaCarro = new ArrayList<Carro> ();
-		listaCaminhao = new ArrayList<Caminhao> ();
+		listaVeiculosAnunciados = new ArrayList<Veiculo> ();
+		listaVeiculosVendidos = new ArrayList<Veiculo> ();
+		listaVeiculosComprados = new ArrayList<Veiculo> ();
 	}
 	
 	//sets e gets
@@ -63,21 +65,29 @@ public class Usuario {
 		return this.contato;
 	}
 	
-	public List<Carro> getListaCarros() {
-		return listaCarro;
+	public List<Veiculo> getListaAnunciados() {
+		return listaVeiculosAnunciados;
 	}
 	
-	public List<Caminhao> getListaCaminhoes() {
-		return listaCaminhao;
+	public List<Veiculo> getListaVendidos() {
+		return listaVeiculosVendidos;
+	}
+	
+	public List<Veiculo> getListaComprados() {
+		return listaVeiculosComprados;
 	}
 	
 	//metodos especificos da classe
-	public void addCarro(Carro carro) {
-		listaCarro.add(carro);
+	public void AnunciarVeiculo(Veiculo veiculo) {
+		listaVeiculosAnunciados.add(veiculo);
 	}
 	
-	public void addCaminhao(Caminhao caminhao) {
-		listaCaminhao.add(caminhao);
+	public void VenderVeiculo(Veiculo veiculo) {
+		listaVeiculosVendidos.add(veiculo);
+	}
+	
+	public void ComprarVeiculo(Veiculo veiculo) {
+		listaVeiculosComprados.add(veiculo);
 	}
 	
 	public void checarCpf() {

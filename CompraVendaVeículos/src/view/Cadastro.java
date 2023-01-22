@@ -99,7 +99,7 @@ public class Cadastro {
 					JOptionPane.showMessageDialog(null, "Insita uma senha para o Usuário");
 				}
 						
-				if (nomeUsuario.isEmpty() == false & cpfUsuario.isEmpty() == false & contatoUsuario.isEmpty() == false & senhaUsuario.isEmpty() == false)	 {
+				if (nomeUsuario.isEmpty() == false & cpfUsuario.isEmpty() == false & contatoUsuario.isEmpty() == false & senhaUsuario.isEmpty() == false) {
 					
 					Usuario novoCadastro = new Usuario();
 					
