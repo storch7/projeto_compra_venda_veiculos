@@ -266,17 +266,10 @@ public class CadastroVeiculo {
 				}
 				
 				JOptionPane.showMessageDialog(null, "Veículo Adicionado com sucesso");
+				new App(usuario);
 				janela.dispose();
 			}
 		});
 		
-	}
-	
-	public static void main(String... args) {
-		Usuario teste = new Usuario();
-		teste.setNome("Teste");
-		teste.setContato("(81) 99473-0774");
-		
-		CadastroVeiculo painel = new CadastroVeiculo(teste);	
 	}
 }
