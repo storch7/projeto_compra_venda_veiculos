@@ -1,4 +1,9 @@
 package main;
+/**
+ * Enumeration que traz a tipificação do caminhão
+ * @author Guilherme
+ *
+ */
 public enum TipoCaminhao {
 	
 	VUC,

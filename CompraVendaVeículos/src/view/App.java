@@ -102,10 +102,11 @@ public class App {
 		JLabel descricaoBanco = new JLabel();
 		
 		JPanel botoesContainer = new JPanel();
-		JButton maisDetalhes = new JButton("Mais detalhes");
-		JButton editar = new JButton("Editar informações");
+				
 		JButton remover = new JButton("Remover");
-		JButton comprar = new JButton("Editar informações");
+		JButton editar = new JButton("Editar informações");
+		JButton maisDetalhes = new JButton("Mais detalhes");
+		JButton comprar = new JButton("Comprar");
 		
 		//Configurações da tela de detalhes 		
 		detalhesContainer.setBounds(20,40, 500, 300);
@@ -122,6 +123,24 @@ public class App {
 		detalhesContainer.add(valorBanco);
 		detalhesContainer.add(descricao);
 		detalhesContainer.add(descricaoBanco);
+		
+		//botões do detalhamento
+		botoesContainer.setBounds(0, 400, 500, 200);
+		botoesContainer.setLayout(new GridLayout(4,1));
+		remover.setSize(100, 40);
+		editar.setSize(100, 40);
+		maisDetalhes.setSize(100, 40);
+		comprar.setSize(100, 40);
+		
+		botoesContainer.add(remover);
+		botoesContainer.add(editar);
+		botoesContainer.add(maisDetalhes);
+		botoesContainer.add(comprar);
+		
+		remover.setVisible(false);
+		editar.setVisible(false);
+		maisDetalhes.setVisible(false);
+		comprar.setVisible(false);
 		
 		detalhesContainer.setVisible(false);
 		
@@ -150,6 +169,7 @@ public class App {
 		//adicionando ao label de detalhes
 		detalhes.add(detalhesProduto);
 		detalhes.add(detalhesContainer);
+		detalhes.add(botoesContainer);
 		detalhes.setLayout(null);
 		tela.add(detalhes);
 		
@@ -183,7 +203,7 @@ public class App {
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				detalhesContainer.setVisible(true);
-				
+								
 				int elemento = veiculosAdicionados.getSelectedIndex();
 				String veiculoDaLista = listaVeiculos.get(elemento);
 				String[] vetorVeiculo = veiculoDaLista.split("/");
@@ -199,7 +219,9 @@ public class App {
 						//String que armazena o nome e placa do veiculo do banco
 						String veiculoDoBanco = Banco.getUsuario().get(i).getListaAnunciados().get(j).getModelo();
 						String placaVeiculoBanco = Banco.getUsuario().get(i).getListaAnunciados().get(j).getPlaca();
-																		
+						
+						Usuario anunciante = Banco.getUsuario().get(i);
+						
 						//caso o veiculo em questão seja igual ao presente no banco
 						if(veiculoSelecionado.equals(veiculoDoBanco) == true && placaVeiculoSelecionado.equals(placaVeiculoBanco) == true) {
 							
@@ -209,6 +231,17 @@ public class App {
 							anoBanco.setText(Integer.toString(Banco.getUsuario().get(i).getListaAnunciados().get(j).getAno()));
 							valorBanco.setText(String.valueOf(Banco.getUsuario().get(i).getListaAnunciados().get(j).getValor()));
 							descricaoBanco.setText(Banco.getUsuario().get(i).getListaAnunciados().get(j).getDescricaoAdicional());
+						}
+						
+						if(usuario.equals(anunciante) == true) {
+							editar.setVisible(true);
+							remover.setVisible(true);
+							maisDetalhes.setVisible(true);
+						}
+						
+						if(usuario.equals(anunciante) == false) {
+							comprar.setVisible(true);
+							maisDetalhes.setVisible(true);
 						}
 					}
 				}
