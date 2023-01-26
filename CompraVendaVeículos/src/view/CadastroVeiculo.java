@@ -20,6 +20,8 @@ public class CadastroVeiculo {
 	private JTextField marcaBox = new JTextField();
 	private JLabel modelo = new JLabel("Modelo:");
 	private JTextField modeloBox = new JTextField();
+	private JLabel placa = new JLabel("Placa:");
+	private JTextField placaBox = new JTextField();
 	private JLabel ano = new JLabel("Ano:");
 	private JTextField anoBox = new JTextField();
 	private JLabel valor = new JLabel("Valor:");
@@ -56,8 +58,10 @@ public class CadastroVeiculo {
 		modeloBox.setBounds(430, 270, 390, 45);
 		ano.setBounds(430, 330, 50, 45);
 		anoBox.setBounds(470, 330, 70, 45);
-		valor.setBounds(630, 330, 50, 45);
-		valorBox.setBounds(670, 330, 70, 45);
+		valor.setBounds(550, 330, 50, 45);
+		valorBox.setBounds(600, 330, 70, 45);
+		placa.setBounds(690, 330, 70, 45);
+		placaBox.setBounds(740, 330, 70, 45);
 		descricao.setBounds(430, 380, 150, 45);
 		descricaoBox.setBounds(430, 420, 390, 45);
 		
@@ -103,6 +107,8 @@ public class CadastroVeiculo {
 		janela.add(anoBox);
 		janela.add(valor);
 		janela.add(valorBox);
+		janela.add(placa);
+		janela.add(placaBox);
 		janela.add(descricao);
 		janela.add(descricaoBox);
 		
@@ -180,6 +186,7 @@ public class CadastroVeiculo {
 					
 					carro.setMarca(marcaBox.getText());
 					carro.setModelo(modeloBox.getText());
+					carro.setPlaca(placaBox.getText());
 					carro.setAno(Integer.parseInt(anoBox.getText()));
 					carro.setValor(Integer.parseInt(valorBox.getText()));
 					carro.setDescricaoAdicional(descricaoBox.getText());
@@ -214,6 +221,7 @@ public class CadastroVeiculo {
 					
 					caminhao.setMarca(marcaBox.getText());
 					caminhao.setModelo(modeloBox.getText());
+					caminhao.setPlaca(placaBox.getText());
 					caminhao.setAno(Integer.parseInt(anoBox.getText()));
 					caminhao.setValor(Integer.parseInt(valorBox.getText()));
 					caminhao.setDescricaoAdicional(descricaoBox.getText());

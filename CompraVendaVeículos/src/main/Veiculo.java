@@ -5,6 +5,7 @@ public abstract class Veiculo {
 	//atributos 
 	private String modelo;
 	private String marca;
+	private String placa;
 	private int ano;
 	private int quilometragem;
 	private String cor;
@@ -21,6 +22,10 @@ public abstract class Veiculo {
 	
 	public void setMarca(String marca) {
 		this.marca = marca;
+	}
+	
+	public void setPlaca(String placa) {
+		this.placa = placa;
 	}
 	
 	public void setAno(int ano) {
@@ -50,6 +55,10 @@ public abstract class Veiculo {
 	
 	public String getMarca() {
 		return this.marca;
+	}
+	
+	public String getPlaca() {
+		return this.placa;
 	}
 	
 	public int getAno() {
