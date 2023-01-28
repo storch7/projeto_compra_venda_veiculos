@@ -11,7 +11,7 @@ import main.*;
  */
 public class EdicaoVeiculo {
 	
-	private JFrame janela = new JFrame();
+	private JFrame janela = new JFrame("Editar dados");
 	private JLabel cadastroVeiculo = new JLabel("Edite as Informações do seu Veículo");
 	private JLabel tipoVeiculo = new JLabel("Tipo de Veículo:");
 	private JLabel tipoVeiculoBanco = new JLabel();

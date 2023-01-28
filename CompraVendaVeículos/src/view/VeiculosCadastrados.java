@@ -19,10 +19,11 @@ import main.Usuario;
  */
 public class VeiculosCadastrados {
 	
-	private JFrame janela = new JFrame();
+	private JFrame janela = new JFrame("Meus Veículos Cadastrados");
 	private JLabel meusVeiculos = new JLabel("Meus Veículos");
 	private JPanel veiculosBanco = new JPanel();
 	private JPanel detalhamento = new JPanel();
+	private JButton voltar = new JButton("Voltar");
 	private JButton editar = new JButton("Editar");
 	private JButton remover = new JButton("Remover");
 	private int indexDoElementoSelecionado;
@@ -51,12 +52,14 @@ public class VeiculosCadastrados {
 		
 		JList<Object> veiculosAdicionados = new JList<Object> (listaVeiculos.toArray());
 		
-		editar.setBounds(115, 100, 100, 45);
-		remover.setBounds(115, 325, 100,45);
+		voltar.setBounds(115, 100, 100, 45);
+		editar.setBounds(115, 200, 100, 45);
+		remover.setBounds(115, 300, 100,45);
 		
 		//adicionando os elementos no JFRAME principal
 		veiculosBanco.add(veiculosAdicionados);
 		
+		detalhamento.add(voltar);
 		detalhamento.add(editar);
 		detalhamento.add(remover);
 		detalhamento.setLayout(null);
@@ -77,6 +80,15 @@ public class VeiculosCadastrados {
 			public void valueChanged(ListSelectionEvent e) {
 				int elemento = veiculosAdicionados.getSelectedIndex();
 				setIndexDoElementoSelecionado(elemento);
+			}
+		});
+		
+		voltar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new App(usuario);
+				janela.dispose();
 			}
 		});
 		
@@ -102,10 +114,18 @@ public class VeiculosCadastrados {
 	}
 	
 	//sets e gets
+	/**
+	 * 
+	 * @param index
+	 */
 	public void setIndexDoElementoSelecionado(int index) {
 		indexDoElementoSelecionado = index;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public int getIndexDoElementoSelecionado() {
 		return indexDoElementoSelecionado;
 	}

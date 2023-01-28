@@ -13,7 +13,7 @@ import main.Usuario;
 import main.Veiculo;
 
 /**
- * Tela principal da aplicação
+ * Tela principal da aplicação, após o usuário logado
  * @author Guilherme
  *
  */
@@ -232,7 +232,31 @@ public class App {
 			}
 		});
 		
+		comprar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new CompraDeVeiculos(usuario);
+				tela.dispose();
+			}
+		});
 		
+		minhasCompras.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new MinhasCompras(usuario);
+				tela.dispose();
+			}
+		});
+		
+		minhasVendas.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new MinhasVendas(usuario);
+			}
+		});
 	}
 	
 }

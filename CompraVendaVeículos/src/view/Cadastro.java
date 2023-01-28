@@ -13,7 +13,7 @@ import main.Usuario;
  */
 public class Cadastro {
 	
-	private JFrame cadastro = new JFrame();
+	private JFrame cadastro = new JFrame("Cadastrar usuário");
 	private JButton volta = new JButton("Voltar");
 	private JLabel informe = new JLabel("Preencha com as informações abaixo:");
 	private JLabel nome = new JLabel("Nome:");
@@ -126,7 +126,7 @@ public class Cadastro {
 		
 	});
 	
-		//ultima linha do construtor
+	//ultima linha do construtor
 	cadastro.setVisible(true);
 	}
 }
