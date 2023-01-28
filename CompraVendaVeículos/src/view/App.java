@@ -25,6 +25,7 @@ public class App {
 	private JLabel contatoBanco;
 	private JButton cadastrarVeiculos = new JButton("Cadastrar Veículos");
 	private JButton veiculosCadastrados = new JButton("Veículos Cadastrados");
+	private JButton comprar = new JButton("Comprar Veículo");
 	private JButton minhasVendas = new JButton("Minhas Vendas");
 	private JButton minhasCompras = new JButton("Minhas Compras");
 	private JButton sair = new JButton("Sair");
@@ -55,8 +56,9 @@ public class App {
 		contatoBanco.setBounds(85, 100, 100, 45);
 		cadastrarVeiculos.setBounds(70, 200, 155, 45);
 		veiculosCadastrados.setBounds(65, 250, 165, 45);
-		minhasVendas.setBounds(75, 300, 145, 45);
-		minhasCompras.setBounds(75, 350, 145, 45);
+		comprar.setBounds(75, 300, 145, 45);
+		minhasVendas.setBounds(75, 350, 145, 45);
+		minhasCompras.setBounds(75, 400, 145, 45);
 		sair.setBounds(25, 650, 100,45);
 		
 		//veículos
@@ -101,13 +103,6 @@ public class App {
 		JLabel descricao = new JLabel("Descrição:");
 		JLabel descricaoBanco = new JLabel();
 		
-		JPanel botoesContainer = new JPanel();
-				
-		JButton remover = new JButton("Remover");
-		JButton editar = new JButton("Editar informações");
-		JButton maisDetalhes = new JButton("Mais detalhes");
-		JButton comprar = new JButton("Comprar");
-		
 		//Configurações da tela de detalhes 		
 		detalhesContainer.setBounds(20,40, 500, 300);
 		detalhesContainer.setLayout(new GridLayout(6,2));
@@ -124,24 +119,6 @@ public class App {
 		detalhesContainer.add(descricao);
 		detalhesContainer.add(descricaoBanco);
 		
-		//botões do detalhamento
-		botoesContainer.setBounds(0, 400, 500, 200);
-		botoesContainer.setLayout(new GridLayout(4,1));
-		remover.setSize(100, 40);
-		editar.setSize(100, 40);
-		maisDetalhes.setSize(100, 40);
-		comprar.setSize(100, 40);
-		
-		botoesContainer.add(remover);
-		botoesContainer.add(editar);
-		botoesContainer.add(maisDetalhes);
-		botoesContainer.add(comprar);
-		
-		remover.setVisible(false);
-		editar.setVisible(false);
-		maisDetalhes.setVisible(false);
-		comprar.setVisible(false);
-		
 		detalhesContainer.setVisible(false);
 		
 		//adicionando ao JLabel perfil
@@ -153,6 +130,7 @@ public class App {
 		perfilUsuario.add(cadastrarVeiculos);
 		perfilUsuario.add(veiculosCadastrados);
 		perfilUsuario.add(minhasVendas);
+		perfilUsuario.add(comprar);
 		perfilUsuario.add(minhasCompras);
 		perfilUsuario.add(sair);
 		
@@ -169,9 +147,10 @@ public class App {
 		//adicionando ao label de detalhes
 		detalhes.add(detalhesProduto);
 		detalhes.add(detalhesContainer);
-		detalhes.add(botoesContainer);
 		detalhes.setLayout(null);
+		
 		tela.add(detalhes);
+		
 		
 		tela.setLayout(null);
 		tela.setResizable(false);
@@ -220,8 +199,6 @@ public class App {
 						String veiculoDoBanco = Banco.getUsuario().get(i).getListaAnunciados().get(j).getModelo();
 						String placaVeiculoBanco = Banco.getUsuario().get(i).getListaAnunciados().get(j).getPlaca();
 						
-						Usuario anunciante = Banco.getUsuario().get(i);
-						
 						//caso o veiculo em questão seja igual ao presente no banco
 						if(veiculoSelecionado.equals(veiculoDoBanco) == true && placaVeiculoSelecionado.equals(placaVeiculoBanco) == true) {
 							
@@ -232,22 +209,21 @@ public class App {
 							valorBanco.setText(String.valueOf(Banco.getUsuario().get(i).getListaAnunciados().get(j).getValor()));
 							descricaoBanco.setText(Banco.getUsuario().get(i).getListaAnunciados().get(j).getDescricaoAdicional());
 						}
-						
-						if(usuario.equals(anunciante) == true) {
-							editar.setVisible(true);
-							remover.setVisible(true);
-							maisDetalhes.setVisible(true);
-						}
-						
-						if(usuario.equals(anunciante) == false) {
-							comprar.setVisible(true);
-							maisDetalhes.setVisible(true);
-						}
 					}
 				}
-				
 			}
 		});
+		
+		veiculosCadastrados.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new VeiculosCadastrados(usuario);
+				tela.dispose();
+			}
+		});
+		
+		
 	}
 	
 }
