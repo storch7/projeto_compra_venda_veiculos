@@ -188,7 +188,7 @@ public class CadastroVeiculo {
 					carro.setModelo(modeloBox.getText());
 					carro.setPlaca(placaBox.getText());
 					carro.setAno(Integer.parseInt(anoBox.getText()));
-					carro.setValor(Integer.parseInt(valorBox.getText()));
+					carro.setValor(Double.valueOf(valorBox.getText()).doubleValue());
 					carro.setDescricaoAdicional(descricaoBox.getText());
 					carro.setDirecaoHidraulica(direcaoHidraulica.isSelected());
 					
@@ -223,7 +223,7 @@ public class CadastroVeiculo {
 					caminhao.setModelo(modeloBox.getText());
 					caminhao.setPlaca(placaBox.getText());
 					caminhao.setAno(Integer.parseInt(anoBox.getText()));
-					caminhao.setValor(Integer.parseInt(valorBox.getText()));
+					caminhao.setValor(Double.valueOf(valorBox.getText()).doubleValue());
 					caminhao.setDescricaoAdicional(descricaoBox.getText());
 					
 					caminhao.setQuantidadeEixos(Integer.parseInt(qntEixosBox.getText()));

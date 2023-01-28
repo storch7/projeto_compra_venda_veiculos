@@ -7,6 +7,8 @@ import java.util.List;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
+import main.Carro;
 import main.Usuario;
 
 public class VeiculosCadastrados {
@@ -74,6 +76,15 @@ public class VeiculosCadastrados {
 				usuario.getListaAnunciados().remove(getIndexDoElementoSelecionado());
 				JOptionPane.showMessageDialog(null, "Veículo removido com sucesso.");
 				new App(usuario);
+				janela.dispose();
+			}
+		});
+		
+		editar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new EdicaoVeiculo(usuario, usuario.getListaAnunciados().get(indexDoElementoSelecionado));
 				janela.dispose();
 			}
 		});
