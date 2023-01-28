@@ -4,6 +4,11 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import main.*;
 
+/**
+ * Tela de edição de um veículo cadastrado
+ * @author Guilherme
+ *
+ */
 public class EdicaoVeiculo {
 	
 	private JFrame janela = new JFrame();
@@ -25,7 +30,12 @@ public class EdicaoVeiculo {
 		
 	private JButton atualizar = new JButton("Atualizar");
 	private JButton voltar = new JButton("Voltar");
-		
+	
+	/**
+	 * método construtor da classe
+	 * @param usuario
+	 * @param veiculo
+	 */
 	public EdicaoVeiculo(Usuario usuario, Veiculo veiculo) {
 		
 		janela.setSize(1250, 750);

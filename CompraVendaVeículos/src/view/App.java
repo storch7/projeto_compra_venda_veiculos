@@ -12,6 +12,11 @@ import banco.Banco;
 import main.Usuario;
 import main.Veiculo;
 
+/**
+ * Tela principal da aplicação
+ * @author Guilherme
+ *
+ */
 public class App {
 	
 	private JFrame tela = new JFrame("Tela Inicial");
@@ -39,6 +44,10 @@ public class App {
 	private JPanel detalhes = new JPanel();
 	private JLabel detalhesProduto = new JLabel("Detalhes do veículo:");
 	
+	/**
+	 * método cosntrutor da classe
+	 * @param usuario
+	 */
 	public App (Usuario usuario) {
 		
 		//DESIGN DA TELA

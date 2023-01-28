@@ -6,6 +6,11 @@ import javax.swing.*;
 import banco.Banco;
 import main.Usuario;
 
+/**
+ * Tela de cadastro de Usuarios
+ * @author Guilherme
+ *
+ */
 public class Cadastro {
 	
 	private JFrame cadastro = new JFrame();
@@ -23,7 +28,9 @@ public class Cadastro {
 	private JTextField senhaBox = new JTextField();
 	private JButton cadastrar = new JButton("Cadastrar");
 	
-	
+	/**
+	 * Construtor da classe
+	 */
 	public Cadastro () {
 		
 		cadastro.setSize(1250, 750);

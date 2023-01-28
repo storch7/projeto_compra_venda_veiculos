@@ -9,6 +9,11 @@ import main.Caminhao;
 import main.Cambio;
 import main.Tracao;
 
+/**
+ * Tela de cadastro de veículos na aplicação
+ * @author Guilherme
+ *
+ */
 public class CadastroVeiculo {
 	
 	private JFrame janela = new JFrame();
@@ -43,7 +48,11 @@ public class CadastroVeiculo {
 	
 	private JButton cadastro = new JButton("Cadastrar");
 	private JButton voltar = new JButton("Voltar");
-		
+	
+	/**
+	 * método construtor da classe
+	 * @param usuario
+	 */
 	public CadastroVeiculo(Usuario usuario) {
 		
 		janela.setSize(1250, 750);

@@ -4,6 +4,11 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import banco.Banco;
 
+/**
+ * Primeira tela do aplicativo: Tela de Login do Usuário
+ * @author Guilherme
+ *
+ */
 public class Login {
 	
 	private JFrame janela = new JFrame("Login");
@@ -16,6 +21,9 @@ public class Login {
 	private JLabel opcao = new JLabel("Ainda não tem uma conta?");
 	private JButton cadastro = new JButton("Cadastrar");
 	
+	/**
+	 * Método construtor da classe
+	 */
 	public Login () {
 		janela.setSize(1250, 750);
 		logIn.setBounds(565, 70, 115, 70);
@@ -89,6 +97,10 @@ public class Login {
 		janela.setVisible(true);
 	}
 	
+	/**
+	 * método main; utilizado para a execução do código
+	 * @param args
+	 */
 	public static void main (String... args) {
 		Login testando = new Login();
 		

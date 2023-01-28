@@ -11,6 +11,12 @@ import javax.swing.event.ListSelectionListener;
 import main.Carro;
 import main.Usuario;
 
+/**
+ * Tela que mostra os veículos cadastrados de um usuario específico e dá
+ * o direcionamento para a edição do veículo ou sua remoção da lista de cadastro
+ * @author Guilherme
+ *
+ */
 public class VeiculosCadastrados {
 	
 	private JFrame janela = new JFrame();
@@ -20,7 +26,11 @@ public class VeiculosCadastrados {
 	private JButton editar = new JButton("Editar");
 	private JButton remover = new JButton("Remover");
 	private int indexDoElementoSelecionado;
-			
+	
+	/**
+	 * método construtor da classe
+	 * @param usuario
+	 */
 	public VeiculosCadastrados(Usuario usuario) {
 		
 		//configuração da tela
@@ -32,6 +42,7 @@ public class VeiculosCadastrados {
 		detalhamento.setBackground(Color.cyan);
 		
 		List<String> listaVeiculos = new ArrayList<String> ();
+		
 		//laço de repetição que passa por todos os modelos de veiculos
 		//adicionados no banco de dados de usuarios:
 		for(int i = 0; i < usuario.getListaAnunciados().size(); i++) {
