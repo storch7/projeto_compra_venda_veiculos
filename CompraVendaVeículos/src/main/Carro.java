@@ -94,7 +94,7 @@ public class Carro extends Veiculo{
 	 */
 	public double aplicarDesconto(double percentual) {
 		double valorAnterior = getValor();
-		double novoValor = valorAnterior * (percentual / 100);
+		double novoValor = valorAnterior * ((100 - percentual) / 100);
 		setValor(novoValor);
 		
 		return novoValor;

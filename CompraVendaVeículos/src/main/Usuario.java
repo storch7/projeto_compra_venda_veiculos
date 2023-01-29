@@ -168,14 +168,13 @@ public class Usuario {
 	/**
 	 * Checagem da validade de um CPF
 	 */
-	public void checarCpf() {
-		if (this.cpf.length() != 9) {
-			this.cpf = null;
-			JOptionPane.showMessageDialog(null, "Insira um CPF válido");
+	public static boolean checarCpf(String cpf) {
+		if (cpf.length() == 11) {
+			return true;
 		}
 		
 		else {
-			System.out.println("CPF válido.");
+			return false;
 		}
 	}
 	
@@ -183,16 +182,15 @@ public class Usuario {
 	 * Checagem da validade de um contato
 	 * @deprecated
 	 */
-	public void checarContato() {
-		if(this.contato.length() > 15) {
-			this.contato = null;
-			JOptionPane.showMessageDialog(null, "Insira um número de contato válido");
+	public static boolean checarContato(String contato) {
+		if(contato.length() != 15) {
+			return false;
 		}
 		
 		else {
-			System.out.println("CPF válido.");
+			return true;
 		}
-	}
 	
+	}
 }
 
