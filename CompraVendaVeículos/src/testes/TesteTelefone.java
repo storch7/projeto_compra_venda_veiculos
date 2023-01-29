@@ -3,12 +3,21 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import main.Usuario;
 
+/**
+ * Classe para realização do test JUnity que confere o formato de telefone que o usuário insere
+ * @author Guilherme
+ *
+ */
 class TesteTelefone {
 
 	@SuppressWarnings("deprecation")
 	@Test
+	
+	/**
+	 * Método que realiza a checagem do formato do telefone
+	 */
 	void checarTelefone() {
-		//Aceita apenas o telefone no formato: (DDD) + " " + 5 PRIMEIROS DÍGITOS + "-" + 4 ÚLTIMOS DÍGITOS
+		
 		String formatoCorreto = "(00) 00000-0000";
 		String formatoIncorreto = "12345678910";
 		

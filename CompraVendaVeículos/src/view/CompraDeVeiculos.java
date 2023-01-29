@@ -10,7 +10,11 @@ import java.util.List;
 import javax.swing.*;
 
 import banco.Banco;
-
+/**
+ * Tela que apresenta os veículos disponíveis para que o usuário possa comprar
+ * @author Guilherme
+ *
+ */
 public class CompraDeVeiculos {
 	
 	private JFrame janela = new JFrame();
@@ -21,6 +25,10 @@ public class CompraDeVeiculos {
 	private JButton comprar = new JButton("Comprar");
 	private int indexDoElementoSelecionado;
 	
+	/**
+	 * método construtor da classe
+	 * @param usuario
+	 */
 	public CompraDeVeiculos(Usuario usuario) {
 		janela.setSize(750,600);
 		veiculosDisponiveis.setBounds(150, 0, 100, 40);
