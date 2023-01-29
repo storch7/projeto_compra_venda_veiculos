@@ -55,7 +55,7 @@ public abstract class Veiculo {
 	}
 	
 	/**
-	 * 
+	 * @deprecated
 	 * @param quilometros
 	 */
 	public void setQuilometragem(int quilometros) {
@@ -122,7 +122,7 @@ public abstract class Veiculo {
 	}
 	
 	/**
-	 * 
+	 * @deprecated
 	 * @return
 	 */
 	public int getQuilometragem() {
