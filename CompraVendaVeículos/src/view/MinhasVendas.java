@@ -13,7 +13,7 @@ import javax.swing.*;
  */
 public class MinhasVendas {
 	
-	private JFrame janela = new JFrame("Minahs Vendas");
+	private JFrame janela = new JFrame("Minhas Vendas");
 	
 	/**
 	 * método construtor da classe

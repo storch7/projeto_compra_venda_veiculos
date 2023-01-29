@@ -33,6 +33,7 @@ public class App {
 	private JButton comprar = new JButton("Comprar Veículo");
 	private JButton minhasVendas = new JButton("Minhas Vendas");
 	private JButton minhasCompras = new JButton("Minhas Compras");
+	private JButton buscarVeiculo = new JButton("Buscar veículo");
 	private JButton sair = new JButton("Sair");
 	
 	
@@ -68,6 +69,7 @@ public class App {
 		comprar.setBounds(75, 300, 145, 45);
 		minhasVendas.setBounds(75, 350, 145, 45);
 		minhasCompras.setBounds(75, 400, 145, 45);
+		buscarVeiculo.setBounds(75, 450, 145, 45);
 		sair.setBounds(25, 650, 100,45);
 		
 		//veículos
@@ -141,6 +143,7 @@ public class App {
 		perfilUsuario.add(minhasVendas);
 		perfilUsuario.add(comprar);
 		perfilUsuario.add(minhasCompras);
+		perfilUsuario.add(buscarVeiculo);
 		perfilUsuario.add(sair);
 		
 		perfilUsuario.setLayout(null);
@@ -255,6 +258,14 @@ public class App {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new MinhasVendas(usuario);
+			}
+		});
+		
+		buscarVeiculo.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Busca();
 			}
 		});
 	}
